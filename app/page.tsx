@@ -1,3 +1,4 @@
+import { Button } from '@/components';
 import { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -8,5 +9,11 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-	return <></>;
+	return (
+		<>
+			<Button appearance={'primary'} arrow="down">
+				btn
+			</Button>
+		</>
+	);
 }
