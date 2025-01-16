@@ -1,4 +1,4 @@
-import { Button } from '@/components';
+import { Button, Rating } from '@/components';
 import { Metadata } from 'next';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -14,6 +14,7 @@ export default function Home() {
 			<Button appearance={'primary'} arrow="down">
 				btn
 			</Button>
+			<Rating rating={3} isEditable />
 		</>
 	);
 }
