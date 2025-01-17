@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Noto_Sans_KR } from 'next/font/google';
 import styles from './page.module.css';
 import '../globals.css';
-import { Footer, Header, Sidebar } from '@/components';
+import { Footer, Header, Sidebar } from '@/layout';
 
 const notoSans = Noto_Sans_KR({ subsets: ['latin'] });
 
