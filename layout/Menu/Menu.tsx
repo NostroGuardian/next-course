@@ -7,6 +7,7 @@ import ProductsIcon from './icons/products.svg';
 import { TopLevelCategory } from '@/interfaces/page.interface';
 import styles from './Menu.module.css';
 import cn from 'classnames';
+import Link from 'next/link';
 
 const firstLevelMenu: FirstLevelMenuItem[] = [
 	{ route: 'courses', name: 'Курсы', icon: <CoursesIcon />, id: TopLevelCategory.Courses },
@@ -34,7 +35,7 @@ export default async function Menu() {
 			<>
 				{firstLevelMenu.map((menuItem) => (
 					<div key={menuItem.route}>
-						<a href={`/${menuItem.route}`}>
+						<Link href={`/${menuItem.route}`}>
 							<div
 								className={cn(styles.firstLevel, {
 									[styles.firstLevelActive]: menuItem.id === firstCategory,
@@ -43,7 +44,7 @@ export default async function Menu() {
 								{menuItem.icon}
 								<span>{menuItem.name}</span>
 							</div>
-						</a>
+						</Link>
 						{menuItem.id == firstCategory && buildSecondLevel(menuItem.route)}
 					</div>
 				))}
@@ -74,7 +75,7 @@ export default async function Menu() {
 		return (
 			<>
 				{pages.map((page) => (
-					<a
+					<Link
 						key={page._id}
 						href={`/${route}/${page.alias}`}
 						className={cn(styles.thirdLevel, {
@@ -82,7 +83,7 @@ export default async function Menu() {
 						})}
 					>
 						{page.category}
-					</a>
+					</Link>
 				))}
 			</>
 		);
