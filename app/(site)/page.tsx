@@ -1,6 +1,5 @@
 import { Button, Rating } from '@/components';
 import { Metadata } from 'next';
-import Menu from './components/menu';
 
 export async function generateMetadata(): Promise<Metadata> {
 	//... logic for computing
@@ -16,7 +15,6 @@ export default async function Home() {
 				btn
 			</Button>
 			<Rating rating={3} isEditable />
-			<Menu />
 		</>
 	);
 }

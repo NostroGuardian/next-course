@@ -1,3 +1,4 @@
-export * from '../layout/Header/Header';
-export * from '../layout/Footer/Footer';
-export * from '../layout/Sidebar/Sidebar';
+export * from './Header/Header';
+export * from './Footer/Footer';
+export * from './Sidebar/Sidebar';
+export * from './Menu/Menu';

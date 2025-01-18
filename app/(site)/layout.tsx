@@ -4,7 +4,7 @@ import styles from './page.module.css';
 import '../globals.css';
 import { Footer, Header, Sidebar } from '@/layout';
 
-const notoSans = Noto_Sans_KR({ subsets: ['latin'] });
+const notoSans = Noto_Sans_KR({ subsets: ['latin'], weight: ['300', '400', '500'] });
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
