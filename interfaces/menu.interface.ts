@@ -22,3 +22,13 @@ export interface FirstLevelMenuItem {
 	icon: JSX.Element;
 	id: TopLevelCategory;
 }
+
+export interface ClientMenuProps {
+	menu: {
+		_id: { secondCategory: string };
+		pages: PageItem[];
+		isOpened?: boolean;
+	}[];
+	firstCategory: TopLevelCategory;
+	firstLevelMenu: FirstLevelMenuItem[];
+}
