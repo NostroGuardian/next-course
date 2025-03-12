@@ -1,7 +1,7 @@
 import { getMenu } from '@/api/menu';
 import { getPage } from '@/api/page';
 import { getProducts } from '@/api/products';
-import { HHData, Htag, Tag } from '@/components';
+import { Advantages, HHData, Htag, Tag } from '@/components';
 import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 import { TopLevelCategory } from '@/interfaces/page.interface';
@@ -38,6 +38,13 @@ export default async function PageProducts({ params }: { params: { alias: string
 			</div>
 
 			{page.firstCategory == TopLevelCategory.Courses && <HHData {...page.hh} />}
+
+			{page.advantages && page.advantages.length > 0 && (
+				<>
+					<Htag tag="h2">Преимущества</Htag>
+					<Advantages advantages={page.advantages} />
+				</>
+			)}
 		</div>
 	);
 }
