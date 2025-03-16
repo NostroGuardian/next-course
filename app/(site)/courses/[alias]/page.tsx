@@ -1,10 +1,11 @@
 import { getMenu } from '@/api/menu';
 import { getPage } from '@/api/page';
 import { getProducts } from '@/api/products';
-import { Advantages, HHData, Htag, P, Tag } from '@/components';
+import { Advantages, HHData, Htag, Tag } from '@/components';
 import { notFound } from 'next/navigation';
-import styles from './page.module.css';
 import { TopLevelCategory } from '@/interfaces/page.interface';
+import { TitleBlock } from '@/layout';
+import styles from './page.module.css';
 
 export async function generateStaticParams() {
 	const menu = await getMenu(0);
@@ -20,15 +21,11 @@ export default async function PageProducts({ params }: { params: { alias: string
 
 	return (
 		<div className={styles.wrapper}>
-			<div className={styles.title}>
-				<Htag tag="h1">{page.title}</Htag>
-				<Tag color="gray" size="m">
-					{products && products.length}
-				</Tag>
-				<span>sorting</span>
-			</div>
-
-			<div>{products && products.map((p) => <div key={p._id}>{p.title}</div>)}</div>
+			<TitleBlock
+				title={page.title}
+				productsCount={products?.length || 0}
+				products={products || []}
+			/>
 
 			<div className={styles.hhTitle}>
 				<Htag tag="h2">Вакансии - {page.category}</Htag>
