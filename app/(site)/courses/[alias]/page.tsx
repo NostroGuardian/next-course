@@ -46,7 +46,12 @@ export default async function PageProducts({ params }: { params: { alias: string
 				</>
 			)}
 
-			{page.seoText && <P>{page.seoText}</P>}
+			{page.seoText && (
+				<div
+					className={styles.seo}
+					dangerouslySetInnerHTML={{ __html: page.seoText }}
+				/>
+			)}
 
 			<Htag tag="h2">Получаемые навыки</Htag>
 			{page.tags.map((t) => (
