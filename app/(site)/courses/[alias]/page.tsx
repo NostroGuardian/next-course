@@ -1,7 +1,7 @@
 import { getMenu } from '@/api/menu';
 import { getPage } from '@/api/page';
 import { getProducts } from '@/api/products';
-import { Advantages, HHData, Htag, Tag } from '@/components';
+import { Advantages, HHData, Htag, P, Tag } from '@/components';
 import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 import { TopLevelCategory } from '@/interfaces/page.interface';
@@ -45,6 +45,15 @@ export default async function PageProducts({ params }: { params: { alias: string
 					<Advantages advantages={page.advantages} />
 				</>
 			)}
+
+			{page.seoText && <P>{page.seoText}</P>}
+
+			<Htag tag="h2">Получаемые навыки</Htag>
+			{page.tags.map((t) => (
+				<Tag key={t} color="primary">
+					{t}
+				</Tag>
+			))}
 		</div>
 	);
 }
