@@ -15,7 +15,7 @@ export default async function Home() {
 				btn
 			</Button>
 			<Rating rating={3} isEditable />
-			<Input placeholder="asd" />
+			<Input placeholder="test" />
 		</>
 	);
 }
